@@ -1,0 +1,47 @@
+.bg {
+  background-color: var(--bg-color);
+
+  &--orange {
+    --bg-color: var(--color-orange);
+  }
+
+  &--yellow {
+    --bg-color: var(--color-yellow);
+  }
+
+  &--primary {
+    --bg-color: var(--color-primary);
+  }
+
+  &--secondary {
+    --bg-color: var(--color-secondary);
+  }
+
+  &--blue {
+    --bg-color: var(--color-blue);
+  }
+
+  &--pink {
+    --bg-color: var(--color-pink);
+  }
+
+  &--green {
+    --bg-color: var(--color-green);
+  }
+}
+
+.hide {
+  display: none;
+
+  &--mobile {
+    @media (--mobile) {
+      display: none !important;
+    }
+  }
+
+  &--desktop {
+    @media (--desktop) {
+      display: none !important;
+    }
+  }
+}

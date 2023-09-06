@@ -1,0 +1,13 @@
+:root {
+  --color-blue: #70D6FF;
+  --color-pink: #FF70A6;
+  --color-orange: #FF9770;
+  --color-yellow: #FFD670;
+  --color-green: #E9FF70;
+  --color-primary: var(--color-pink);
+  --color-secondary: var(--color-blue);
+  --bg-color: var(--color-primary); 
+}
+
+@custom-media --mobile (max-width: 1023px);
+@custom-media --desktop (min-width: 1024px); 

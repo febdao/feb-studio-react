@@ -1,0 +1,12 @@
+{
+  "sections": [
+    {
+      "name": "wedding",
+      "label": "Wedding photo"
+    },
+    {
+      "name": "family",
+      "label": "Family photo"
+    }
+  ]
+}

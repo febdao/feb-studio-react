@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Satisfy&family=Titillium+Web:wght@300;400&display=swap');
+
+body {
+  font-family: 'Satisfy', cursive;
+}
+
+h1,
+h2,
+h3,
+.button,
+h4 {
+  font-family: 'Titillium Web', sans-serif;
+}
+body {
+  font-size: rem(20px);
+}
+
+.background-animate {
+  background-size: 400%;
+  animation: AnimationBg 10s ease infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.2;
+  z-index: 1;
+  background-image: linear-gradient(to right, var(--bg-color) , black);
+}
+
+@keyframes AnimationBg {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes titleAnimation { 
+	0% {
+	    opacity: 0;
+	    transform: translateY(200px);
+	}
+	8% {
+	    opacity: 1;
+	    transform: translateY(0px);
+	}
+	17% {
+	    opacity: 1;
+	    transform: scale(1);
+	}
+	19% { opacity: 0 }
+	25% {
+	    opacity: 0;
+	    transform: scale(10);
+	}
+	100% { opacity: 0 }
+}

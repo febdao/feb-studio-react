@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Cta from './Cta';
 
 const Slide = ({id, label, images, bgStyle}) => {
@@ -24,9 +23,6 @@ const Slide = ({id, label, images, bgStyle}) => {
       </div>
     </div>
   )
-}
-
-Slide.propTypes = {
 }
 
 export default Slide

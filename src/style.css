@@ -83,6 +83,16 @@ body {
     vertical-align: middle;
     background: transparent url('./images/offer.gif') no-repeat center center;
     background-size: 100%;
+  }.mail-icon {
+  position: relative;
+}.mail-icon:after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url('./images/send.gif') no-repeat center center;
+    background-size: 100%;
   }body {
   font-family: 'Alkatra', cursive;
 }h1,

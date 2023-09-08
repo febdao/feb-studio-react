@@ -60,3 +60,18 @@
     background-size: 100%;
   }
 }
+
+
+.mail-icon {
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url('./images/send.gif') no-repeat center center;
+    background-size: 100%;
+  }
+}

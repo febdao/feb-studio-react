@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Satisfy&family=Titillium+Web:wght@300;400&display=swap');/*
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Titillium+Web:wght@300;400&display=swap');/*
  * Some defaults are based on inherit
  *
  * Why inherit ?
@@ -71,8 +71,20 @@ body {
     }@media (min-width: 1024px) {.hide--desktop {
       display: none !important
   }
-    }body {
-  font-family: 'Satisfy', cursive;
+    }.offer-icon {
+  position: relative;
+}.offer-icon:after {
+    /* position: absolute; */
+    left: -60px;
+    content: '';
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url('./images/offer.gif') no-repeat center center;
+    background-size: 100%;
+  }body {
+  font-family: 'Alkatra', cursive;
 }h1,
 h2,
 h3,
@@ -200,16 +212,18 @@ h4 {
     margin: 0;
     margin-bottom: 10px;
   }.slide__desc {
-    font-size: 24px;
+    font-size: 30px;
     margin: 0;
     margin-bottom: 10px;
     color: white;
+    max-width: 800px;
+    background: rgba(0,0,0,.4);
+    padding: 10px;
+    border-radius: 10px;
   }.slide__content {
     position: absolute;
     left: 10%;
-    bottom: 0;
     top: 50%;
-    right: 10%;
     z-index: 10;
   }.slide:after {
     position: absolute;
@@ -249,17 +263,18 @@ h4 {
     right: 5px
 }
   }@media (min-width: 1024px) {.nav {
-    /* top: 0px;
-    left: 0px; */
-    bottom: 5px;
-    right: 5px
+    top: 0px;
+    left: 0px
+    /* bottom: 5px;
+    right: 5px; */
 }
   }.nav__list {
     padding: 0;
     margin: 0;
     list-style: none;
   }@media (min-width: 1024px) {.nav__list {
-      /* display: flex; */
+      display: flex;
+      padding-left: 20px
   }
     }.nav__item {
 
@@ -269,22 +284,24 @@ h4 {
     font-size: 1rem;
     text-decoration: none;
     display: inline-block;
-    min-width: 100px;
     position: relative;
-  }.nav__link:before {
+  }@media (min-width: 1024px) {.nav__link {
+      padding-right: 20px
+  }
+    }.nav__link:before {
       content: "";
       width: 8px;
       height: 8px;
       background: white;
       display: block;
       position: absolute;
-      left: -5px;
+      left: -4px;
       bottom: 50%;
       margin-bottom: -4px;
       transition: all 0.3s;
     }.nav__link:hover:before {
-        bottom: 8px;
-        width: 66px;
+        bottom: 10px;
+        width: 39px;
         height: 1px;
         left: 5px;
       }

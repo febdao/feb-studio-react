@@ -8,10 +8,10 @@
   }
 
   @media (--desktop) {
-    /* top: 0px;
-    left: 0px; */
-    bottom: 5px;
-    right: 5px;
+    top: 0px;
+    left: 0px;
+    /* bottom: 5px;
+    right: 5px; */
   }
 
   &__list {
@@ -20,7 +20,8 @@
     list-style: none;
 
     @media (--desktop) {
-      /* display: flex; */
+      display: flex;
+      padding-left: 20px;
     }
   }
 
@@ -34,8 +35,11 @@
     font-size: 1rem;
     text-decoration: none;
     display: inline-block;
-    min-width: 100px;
     position: relative;
+
+    @media (--desktop) {
+      padding-right: 20px;
+    }
 
     &:before {
       content: "";
@@ -44,7 +48,7 @@
       background: white;
       display: block;
       position: absolute;
-      left: -5px;
+      left: -4px;
       bottom: 50%;
       margin-bottom: -4px;
       transition: all 0.3s;
@@ -52,8 +56,8 @@
     
     &:hover {
       &:before {
-        bottom: 8px;
-        width: 66px;
+        bottom: 10px;
+        width: 39px;
         height: 1px;
         left: 5px;
       }

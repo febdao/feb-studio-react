@@ -45,3 +45,18 @@
     }
   }
 }
+
+.offer-icon {
+  position: relative;
+  &:after {
+    /* position: absolute; */
+    left: -60px;
+    content: '';
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent url('./images/offer.gif') no-repeat center center;
+    background-size: 100%;
+  }
+}

@@ -1,9 +1,8 @@
 import React from 'react'
 import Cta from './Cta';
 
-const Slide = ({id, label, images, bgStyle}) => {
+const Slide = ({id, label, desc, images, bgStyle}) => {
   const totalImage = images.length;
-  console.log('labe component: ', label);
 
   return (
     <div className='slide' id={id}>
@@ -19,6 +18,9 @@ const Slide = ({id, label, images, bgStyle}) => {
       <div className='background-animate'></div>
       <div className='slide__content'>
         <h2 className='slide__title'>{label}</h2>
+        {desc ? (
+          <div className='slide__desc' dangerouslySetInnerHTML={{__html: desc}}></div>
+        ) : null}
         <Cta />
       </div>
     </div>

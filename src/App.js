@@ -16,6 +16,7 @@ const sections = [
   {
     id: 'featured',
     label: 'Feb Studio',
+    desc: '<span class="offer-icon"></span> September Special: $100 for a 1-hour session with 10 edited and unlimited raw photos.',
     images: getImages(imageFeatured),
     style: 'green',
   },
@@ -50,7 +51,7 @@ const App = () => {
     <div>
       <div className='page-slider'>
         {sections.map((section) => {
-          return <Slide key={section.id} id={section.id} images={section.images} label={section.label} bgStyle={section.style}/>
+          return <Slide key={section.id} id={section.id} images={section.images} desc={section.desc} label={section.label} bgStyle={section.style}/>
         })}
       </div>
       <div className='page-nav'>

@@ -220,12 +220,20 @@ h4 {
     background: rgba(0,0,0,.4);
     padding: 10px;
     border-radius: 10px;
-  }.slide__content {
+  }@media (max-width: 1023px) {.slide__desc {
+      font-size: 22px
+  }
+    }.slide__content {
     position: absolute;
     left: 10%;
     top: 50%;
     z-index: 10;
-  }.slide:after {
+    transform: translateY(-50%);
+  }@media (max-width: 1023px) {.slide__content {
+      left: 5%;
+      right: 5%
+  }
+    }.slide:after {
     position: absolute;
     top: 0;
     left: 0;

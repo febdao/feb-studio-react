@@ -45,6 +45,10 @@
     background: rgba(0,0,0,.4);
     padding: 10px;
     border-radius: 10px;
+
+    @media (--mobile) {
+      font-size: 22px;
+    }
   }
 
   &__content {
@@ -52,6 +56,12 @@
     left: 10%;
     top: 50%;
     z-index: 10;
+    transform: translateY(-50%);
+
+    @media (--mobile) {
+      left: 5%;
+      right: 5%;
+    }
   }
 
   &:after {

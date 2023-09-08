@@ -249,15 +249,17 @@ h4 {
     right: 5px
 }
   }@media (min-width: 1024px) {.nav {
-    top: 0px;
-    left: 0px
+    /* top: 0px;
+    left: 0px; */
+    bottom: 5px;
+    right: 5px
 }
   }.nav__list {
     padding: 0;
     margin: 0;
     list-style: none;
   }@media (min-width: 1024px) {.nav__list {
-      display: flex
+      /* display: flex; */
   }
     }.nav__item {
 
@@ -267,11 +269,22 @@ h4 {
     font-size: 1rem;
     text-decoration: none;
     display: inline-block;
-    min-width: 150px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255, 0.1);
-    transition: all 1s;
-    background-color: rgba(0,0,0,0.5);
-  }.nav__link:hover {
-      background-color: var(--color-primary);
-    }
+    min-width: 100px;
+    position: relative;
+  }.nav__link:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: white;
+      display: block;
+      position: absolute;
+      left: -5px;
+      bottom: 50%;
+      margin-bottom: -4px;
+      transition: all 0.3s;
+    }.nav__link:hover:before {
+        bottom: 8px;
+        width: 66px;
+        height: 1px;
+        left: 5px;
+      }

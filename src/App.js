@@ -16,7 +16,6 @@ const sections = [
   {
     id: 'featured',
     label: 'Feb Studio',
-    desc: '<span class="offer-icon"></span> September Special: $100 for a 1-hour session with 10 edited and unlimited raw photos.',
     images: getImages(imageFeatured),
     style: 'green',
   },

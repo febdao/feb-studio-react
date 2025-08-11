@@ -1,12 +1,62 @@
 {
-  "sections": [
-    {
-      "name": "wedding",
-      "label": "Wedding photo"
+  "albums": {
+    "featured": {
+      "name": "Featured",
+      "images": [
+        "images/featured/1.jpeg",
+        "images/featured/2.jpeg",
+        "images/featured/3.jpeg",
+        "images/featured/4.jpeg",
+        "images/featured/5.jpeg",
+        "images/featured/6.jpeg",
+        "images/featured/7.jpeg",
+        "images/featured/8.jpeg",
+        "images/featured/9.jpeg",
+        "images/featured/10.jpeg",
+        "images/featured/11.jpeg",
+        "images/featured/12.jpeg",
+        "images/featured/13.jpeg"
+      ]
     },
-    {
-      "name": "family",
-      "label": "Family photo"
+    "event": {
+      "name": "Event",
+      "images": [
+        "images/event/1.jpg",
+        "images/event/2.jpg",
+        "images/event/3.jpg",
+        "images/event/4.jpg",
+        "images/event/5.jpg",
+        "images/event/6.jpg"
+      ]
+    },
+    "family": {
+      "name": "Family",
+      "images": [
+        "images/family/1.jpeg",
+        "images/family/2.jpeg",
+        "images/family/3.jpeg",
+        "images/family/4.jpeg",
+        "images/family/5.jpeg",
+        "images/family/6.jpeg"
+      ]
+    },
+    "wedding": {
+      "name": "Wedding",
+      "images": [
+        "images/wedding/1.jpeg",
+        "images/wedding/2.jpeg",
+        "images/wedding/3.jpeg",
+        "images/wedding/4.jpeg"
+      ]
+    },
+    "portrait": {
+      "name": "Portrait",
+      "images": [
+        "images/portrait/0.jpg",
+        "images/portrait/1.jpeg",
+        "images/portrait/01.jpeg",
+        "images/portrait/05.jpg"
+      ]
     }
-  ]
+  }
 }

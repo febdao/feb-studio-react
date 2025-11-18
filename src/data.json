@@ -2,7 +2,7 @@
   "albums": {
     "featured": {
       "name": "Featured",
-      "images": [
+      "photos": [
         "images/featured/1.jpeg",
         "images/featured/2.jpeg",
         "images/featured/3.jpeg",
@@ -14,13 +14,12 @@
         "images/featured/9.jpeg",
         "images/featured/10.jpeg",
         "images/featured/11.jpeg",
-        "images/featured/12.jpeg",
-        "images/featured/13.jpeg"
+        "images/featured/12.jpeg"
       ]
     },
     "event": {
       "name": "Event",
-      "images": [
+      "photos": [
         "images/event/1.jpg",
         "images/event/2.jpg",
         "images/event/3.jpg",
@@ -31,7 +30,7 @@
     },
     "family": {
       "name": "Family",
-      "images": [
+      "photos": [
         "images/family/1.jpeg",
         "images/family/2.jpeg",
         "images/family/3.jpeg",
@@ -42,7 +41,7 @@
     },
     "wedding": {
       "name": "Wedding",
-      "images": [
+      "photos": [
         "images/wedding/1.jpeg",
         "images/wedding/2.jpeg",
         "images/wedding/3.jpeg",
@@ -51,7 +50,7 @@
     },
     "portrait": {
       "name": "Portrait",
-      "images": [
+      "photos": [
         "images/portrait/0.jpg",
         "images/portrait/1.jpeg",
         "images/portrait/01.jpeg",

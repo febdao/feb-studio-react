@@ -1,4 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: light --default, dark, autumn;
+}
+
+:root {
+  --lg: 1024px;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.hero-banner {
+  padding: 4rem 0;
+
+  @media (min-width: 1024px) {
+    height: 80vh;
+  }
+}
+
+.hero-banner__content {
+  text-align: center;
+  padding: 2rem;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    max-width: 80%;
+  }
+}
+
+.hero-banner__logo {
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.hero-baner__image {
+  border-radius: 15px;
+}
+
+.hero-banner__title {
+  font-size: 3rem;
+  font-weight: 700;
+
+  @media (min-width: 640px) {
+    font-size: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 8rem;
+  }
+}
+
+.hero-banner__title span {
+  background: linear-gradient(90deg, #43FFEC 0%, #FFB84D 50%, #FF0080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.album {
+  max-width: 2048px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.album__item {
+  margin-bottom: 1rem;
+}
+
+.album__image {
+  margin: 0 auto;
 }

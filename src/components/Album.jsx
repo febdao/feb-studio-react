@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react'
-import FsLightbox from 'fslightbox-react'
-
-const Album = ({ title, images, toggler }) => {
-  useEffect(() => {
-    console.log('images', images)
-  }, [images])
-
-  useEffect(() => {
-    console.log('toggler', toggler)
-  }, [toggler])
-
+function Album({ album }) {
+  const { photos, name} = album
+  console.log('photos', photos)
   return (
-    <div>
-      <h1>{title}</h1>
-      <FsLightbox
-        sources={images}
-        toggler={toggler}
-      />
+    <div className="album">
+      <h2 className="album__title">{name}</h2>
+      {photos.map((photo) => (
+        <div key={photo} className="album__item">
+          <img className="album__image" src={photo} alt="hero" />
+        </div>
+      ))}
     </div>
   )
 }

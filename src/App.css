@@ -74,3 +74,68 @@ body {
 .album__image {
   margin: 0 auto;
 }
+
+.album-cover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.album-cover__content {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.album-cover:hover .album-cover__content {
+  opacity: 1;
+}
+
+.album-cover__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #43FFEC 0%, #FFB84D 50%, #FF0080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 10;
+  overflow: auto;
+}
+
+.content-popup__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  background: black;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.content-popup__close:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}

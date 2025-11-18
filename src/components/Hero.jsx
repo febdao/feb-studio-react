@@ -10,7 +10,7 @@ function Hero({ photos }) {
     <div className="hero-banner">
       <div className="hero-banner__content">
         <img className="hero-banner__logo" src="images/logo.png" alt="logo" />
-        <h1 className="hero-banner__title">
+        <h1 className="hero-banner__title block-title">
           <span className="hidden">Feb Studio</span>
           We Capture Your Best <span>Moments</span>
         </h1>

@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import data from './data.json'
 import CTA from './components/CTA'
 import fetchImages from './utils/fetchImages'
+import Booking from './components/Booking'
 
 function App() {
   const { albums: staticAlbums, featured } = data
@@ -32,7 +33,7 @@ function App() {
         <Hero photos={heroPhotos} />
         <div className="content bg-amber-50 content p-10 md:p-20">
           <div className="container mx-auto">
-            <h2 className="text-3xl md:text-6xl font-bold text-center mb-10 md:mb-20 block-title">Our <span>projects</span></h2>
+            <h2 className="text-3xl md:text-6xl font-bold text-center mb-10 md:mb-20 block-title">Our <span>Projects</span></h2>
             <div className="content-grid">
               {Object.keys(albums).map((album) => (
                 <div className="content-grid__item" key={album} onClick={() => {
@@ -68,15 +69,7 @@ function App() {
                 <button className="btn">Close</button>
               </form>
             </div>
-            <iframe
-              id="JotFormIFrame-253222382012039"
-              title="Feb Studio Booking Inquiry Form"
-              allowtransparency="true"
-              allow="geolocation; microphone; camera; fullscreen; payment"
-              src="https://form.jotform.com/253222382012039"
-              frameBorder="0"
-            >
-            </iframe>
+            <Booking />
           </div>
         </dialog>
       </div>

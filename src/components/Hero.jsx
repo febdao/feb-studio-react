@@ -1,9 +1,8 @@
 import { useMemo } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react"
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"
+import { EffectCoverflow, Autoplay } from "swiper/modules"
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
 
 function Hero({ photos }) {
   const randomizedPhotos = useMemo(() => {
@@ -42,16 +41,13 @@ function Hero({ photos }) {
           slideShadows: false,
         }}
         autoplay={true}
-        pagination={{ clickable: true }}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
+        modules={[EffectCoverflow, Autoplay]}
         breakpoints={{
           640: {
-            slidesPerView: 4,
-            pagination: false
+            slidesPerView: 4
           },
           1536: {
-            slidesPerView: 6,
-            pagination: false
+            slidesPerView: 6
           }
         }}
       >

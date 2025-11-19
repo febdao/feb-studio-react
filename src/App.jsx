@@ -18,9 +18,9 @@ function App() {
       <div className="content bg-amber-50 content p-10 md:p-20">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-6xl font-bold text-center mb-10 md:mb-20 block-title">Our <span>projects</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="content-grid">
             {Object.keys(albums).map((album) => (
-              <div key={album} onClick={() => {
+              <div className="content-grid__item" key={album} onClick={() => {
                 setSelectedAlbum(albums[album])
                 setToggler(!toggler)
               }}>

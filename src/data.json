@@ -7,14 +7,32 @@
     "stacey": {
       "name": "Stacey He",
       "description": "A traditional collection of Stacey He's moments",
-      "tags": ["Stacey He", "Stacey's Moments", "portrait"],
+      "tags": ["portrait"],
       "location": "OPH Ladies Rose Garden"
     },
     "fanny": {
       "name": "Fanny",
-      "description": "A beutiful collection of Fanny's moments",
-      "tags": ["Fanny", "Fanny's Moments", "family"],
+      "description": "A beautiful collection of Fanny's moments",
+      "tags": ["family"],
       "location": "OPH Ladies Rose Garden"
+    },
+    "giordy": {
+      "name": "Giordy",
+      "description": "Special moments of Giordy and his kids",
+      "tags": ["family"],
+      "location": "Evatt Park"
+    },
+    "catherine": {
+      "name": "Catherine",
+      "description": "Special moments of Catherine and her family",
+      "tags": ["family"],
+      "location": "SunFlower field"
+    },
+    "dscd2025": {
+      "name": "DrupalSouth 2025",
+      "description": "DrupalSouth Community Day 2025",
+      "tags": ["event"],
+      "location": "Canberra Southern Cross Club"
     },
     "event": {
       "name": "Event",

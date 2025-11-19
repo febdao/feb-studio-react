@@ -4,6 +4,12 @@
       "name": "Featured",
       "description": "We capture your best moments"
     },
+    "fanny": {
+      "name": "Fanny",
+      "description": "A beutiful collection of Fanny's moments",
+      "tags": ["Fanny", "Fanny's Moments", "family"],
+      "location": "OPH Ladies Rose Garden"
+    },
     "event": {
       "name": "Event",
       "description": "We capture your best Event moments"

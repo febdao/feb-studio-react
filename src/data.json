@@ -34,11 +34,16 @@
       "tags": ["event"],
       "location": "Canberra Southern Cross Club"
     },
+    "william": {
+      "name": "William",
+      "description": "William's birthday",
+      "tags": ["event", "portrait"]
+    },
     "hanh-harry": {
       "name": "Hanh & Harry",
       "description": "Hanh & Harry's moments",
       "tags": ["family", "portrait"],
-      "location": "Hanh Harry's home"
+      "location": "Mialli place, O'malley"
     },
     "kathy-sunflower": {
       "name": "Kathy Sunflower",
@@ -48,7 +53,7 @@
     },
     "badminton-2025": {
       "name": "Badminton 2025",
-      "description": "Badminton 2025",
+      "description": "An event organized by CVAS",
       "tags": ["event"],
       "location": "Gungahlin College Basketball Courts"
     },
@@ -57,6 +62,12 @@
       "description": "Đêm Nhớ 2025 - a music night organized by VietMelody",
       "tags": ["event"],
       "location": "Harmonie German Club"
+    },
+    "huongly": {
+      "name": "Hương Ly",
+      "description": "Hương Ly's moments",
+      "tags": ["portrait"],
+      "location": "OPH Ladies Rose Garden"
     }
   }
 }

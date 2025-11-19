@@ -22,22 +22,29 @@
       "tags": ["family"],
       "location": "Evatt Park"
     },
+    "linhhuong": {
+      "name": "Hương & Andrew",
+      "description": "Autumn photos of Hương & Andrew",
+      "tags": ["family", "portrait"],
+      "location": "Mialli place, O'malley"
+    },
     "catherine": {
       "name": "Catherine",
       "description": "Special moments of Catherine and her family",
       "tags": ["family"],
       "location": "SunFlower field"
     },
-    "dscd2025": {
-      "name": "DrupalSouth 2025",
-      "description": "DrupalSouth Community Day 2025",
-      "tags": ["event"],
-      "location": "Canberra Southern Cross Club"
-    },
     "bo": {
       "name": "Clara",
       "description": "Clara's birthday",
-      "tags": ["event", "portrait"]
+      "tags": ["event", "portrait"],
+      "location": "Feb Studio"
+    },
+    "huongly": {
+      "name": "Hương Ly",
+      "description": "Hương Ly's moments",
+      "tags": ["portrait"],
+      "location": "OPH Ladies Rose Garden"
     },
     "william": {
       "name": "William",
@@ -66,6 +73,18 @@
       "tags": ["family", "portrait"],
       "location": "SunFlower field"
     },
+    "trinhoa": {
+      "name": "Trịnh Hoa",
+      "description": "Trịnh Hoa prewedding moments",
+      "tags": ["portrait"],
+      "location": "Feb Studio"
+    },
+    "dscd2025": {
+      "name": "DrupalSouth 2025",
+      "description": "DrupalSouth Community Day 2025",
+      "tags": ["event"],
+      "location": "Canberra Southern Cross Club"
+    },
     "luna-tran": {
       "name": "Luna Tran",
       "tags": ["portrait"],
@@ -82,12 +101,6 @@
       "description": "Đêm Nhớ 2025 - a music night organized by VietMelody",
       "tags": ["event"],
       "location": "Harmonie German Club"
-    },
-    "huongly": {
-      "name": "Hương Ly",
-      "description": "Hương Ly's moments",
-      "tags": ["portrait"],
-      "location": "OPH Ladies Rose Garden"
     }
   }
 }

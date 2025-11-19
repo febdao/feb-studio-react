@@ -12,6 +12,11 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .hero-banner {
   padding: 4rem 0;
 }

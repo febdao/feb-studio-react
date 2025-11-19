@@ -1,9 +1,5 @@
 {
   "albums": {
-    "featured": {
-      "name": "Featured",
-      "description": "We capture your best moments"
-    },
     "stacey": {
       "name": "Stacey He",
       "description": "A traditional collection of Stacey He's moments",
@@ -102,5 +98,9 @@
       "tags": ["event"],
       "location": "Harmonie German Club"
     }
+  },
+  "featured": {
+    "name": "Featured",
+    "description": "We capture your best moments"
   }
 }

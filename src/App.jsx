@@ -7,7 +7,7 @@ import data from './data.json'
 import fetchImages from './utils/fetchImages'
 
 function App() {
-  const { albums: staticAlbums } = data
+  const { albums: staticAlbums, featured } = data
   const albums = Object.fromEntries(
     Object.entries(staticAlbums).map(([albumKey, album]) => {
       const photosFromFolder = fetchImages(albumKey)
@@ -23,7 +23,7 @@ function App() {
 
   const [selectedAlbum, setSelectedAlbum] = useState(null)
   const [toggler, setToggler] = useState(false)
-  const heroPhotos = albums.featured?.photos ?? []
+  const heroPhotos = featured ? fetchImages('featured') : []
 
   return (
     <div data-theme="autumn">

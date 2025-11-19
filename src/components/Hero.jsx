@@ -30,8 +30,8 @@ function Hero({ photos }) {
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
-        spaceBetween={20}
-        slidesPerView={1}
+        spaceBetween={5}
+        slidesPerView={2}
         centeredSlides={true}
         centeredSlidesBounds={true}
         coverflowEffect={{

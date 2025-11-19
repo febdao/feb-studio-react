@@ -51,6 +51,11 @@
       "tags": ["family", "portrait"],
       "location": "SunFlower field"
     },
+    "luna-tran": {
+      "name": "Luna Tran",
+      "tags": ["portrait"],
+      "location": "Palmerston"
+    },
     "badminton-2025": {
       "name": "Badminton 2025",
       "description": "An event organized by CVAS",

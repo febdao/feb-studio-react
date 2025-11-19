@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"
 import 'swiper/css'
@@ -5,7 +6,18 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 
 function Hero({ photos }) {
-  console.log("photos: ", photos)
+  const randomizedPhotos = useMemo(() => {
+    if (!photos || photos.length === 0) {
+      return []
+    }
+    const shuffled = [...photos]
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+    return shuffled
+  }, [photos])
+  
   return (
     <div className="hero-banner">
       <div className="hero-banner__content">
@@ -41,7 +53,7 @@ function Hero({ photos }) {
           }
         }}
       >
-        {photos.map((photo) => (
+        {randomizedPhotos.map((photo) => (
           <SwiperSlide key={photo} data-swiper-autoplay={5000}>
             <img className="hero-baner__image" src={photo} alt="hero" />
           </SwiperSlide>

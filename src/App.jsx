@@ -4,13 +4,26 @@ import Album from './components/Album'
 import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
 import data from './data.json'
+import fetchImages from './utils/fetchImages'
 
 function App() {
-  const { albums } = data
-  console.log('albums: ', albums)
+  const { albums: staticAlbums } = data
+  const albums = Object.fromEntries(
+    Object.entries(staticAlbums).map(([albumKey, album]) => {
+      const photosFromFolder = fetchImages(albumKey)
+      return [
+        albumKey,
+        {
+          ...album,
+          photos: photosFromFolder.length ? photosFromFolder : [],
+        },
+      ]
+    }),
+  )
+
   const [selectedAlbum, setSelectedAlbum] = useState(null)
   const [toggler, setToggler] = useState(false)
-  const heroPhotos = albums.featured.photos
+  const heroPhotos = albums.featured?.photos ?? []
 
   return (
     <div data-theme="autumn">
@@ -36,7 +49,6 @@ function App() {
         </button>
         {selectedAlbum && <Album album={selectedAlbum} />}
       </div>}
-      
     </div>
   )
 }

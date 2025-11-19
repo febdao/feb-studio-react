@@ -34,21 +34,29 @@
       "tags": ["event"],
       "location": "Canberra Southern Cross Club"
     },
-    "event": {
-      "name": "Event",
-      "description": "We capture your best Event moments"
+    "hanh-harry": {
+      "name": "Hanh & Harry",
+      "description": "Hanh & Harry's moments",
+      "tags": ["family", "portrait"],
+      "location": "Hanh Harry's home"
     },
-    "family": {
-      "name": "Family",
-      "description": "We capture your best Family moments"
+    "kathy-sunflower": {
+      "name": "Kathy Sunflower",
+      "description": "Kathy's family moments at sunflower field",
+      "tags": ["family", "portrait"],
+      "location": "SunFlower field"
     },
-    "wedding": {
-      "name": "Wedding",
-      "description": "We capture your best Wedding moments"
+    "badminton-2025": {
+      "name": "Badminton 2025",
+      "description": "Badminton 2025",
+      "tags": ["event"],
+      "location": "Gungahlin College Basketball Courts"
     },
-    "portrait": {
-      "name": "Portrait",
-      "description": "We capture your best Portrait moments"
+    "demnho2025": {
+      "name": "Đêm Nhớ 2025",
+      "description": "Đêm Nhớ 2025 - a music night organized by VietMelody",
+      "tags": ["event"],
+      "location": "Harmonie German Club"
     }
   }
 }

@@ -34,9 +34,24 @@
       "tags": ["event"],
       "location": "Canberra Southern Cross Club"
     },
+    "bo": {
+      "name": "Clara",
+      "description": "Clara's birthday",
+      "tags": ["event", "portrait"]
+    },
     "william": {
       "name": "William",
       "description": "William's birthday",
+      "tags": ["event", "portrait"]
+    },
+    "jenny-nguyen": {
+      "name": "Jenny Thục Nguyễn",
+      "description": "A mini session of Jenny Thục Nguyễn and her friends.",
+      "tags": ["family", "portrait"]
+    },
+    "minky": {
+      "name": "Minky",
+      "description": "Minky's birthday",
       "tags": ["event", "portrait"]
     },
     "hanh-harry": {

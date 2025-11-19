@@ -63,6 +63,12 @@
       "tags": ["family", "portrait"],
       "location": "Mialli place, O'malley"
     },
+    "khanh2025": {
+      "name": "Khanh Kami",
+      "description": "A beautiful photos of Khanh Kami in Sunflower field",
+      "tags": ["portrait"],
+      "location": "SunFlower field"
+    },
     "kathy-sunflower": {
       "name": "Kathy Sunflower",
       "description": "Kathy's family moments at sunflower field",

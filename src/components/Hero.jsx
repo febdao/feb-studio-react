@@ -46,11 +46,11 @@ function Hero({ photos }) {
         modules={[EffectCoverflow, Pagination, Autoplay]}
         breakpoints={{
           640: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             pagination: false
           },
           1536: {
-            slidesPerView: 5,
+            slidesPerView: 6,
             pagination: false
           }
         }}

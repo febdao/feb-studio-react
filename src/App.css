@@ -17,6 +17,10 @@ img {
   height: auto;
 }
 
+.main-content.is-inactive {
+  opacity: 0;
+}
+
 .hero-banner {
   padding: 4rem 0;
 }
@@ -128,12 +132,8 @@ img {
   z-index: 10;
   overflow: auto;
 }
-
+.content-popup__back,
 .content-popup__close {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 20;
   background: black;
   display: inline-block;
   padding: 10px 20px;
@@ -146,8 +146,23 @@ img {
   transition: all 0.3s ease-in-out;
 }
 
+.content-popup__back:hover,
 .content-popup__close:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.content-popup__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.content-popup__back {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 300px;
+  display: block;
 }
 
 .content-grid__item {
@@ -156,4 +171,18 @@ img {
 
 .content-grid {
   columns: 400px;
+}
+
+.dock__logo {
+  max-width: 65px;
+  height: auto;
+}
+
+.doc__phone a {
+  width: 45px;
+  height: auto;
+}
+
+.cta svg {
+  width: 35px;
 }

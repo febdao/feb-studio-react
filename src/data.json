@@ -4,6 +4,12 @@
       "name": "Featured",
       "description": "We capture your best moments"
     },
+    "stacey": {
+      "name": "Stacey He",
+      "description": "A traditional collection of Stacey He's moments",
+      "tags": ["Stacey He", "Stacey's Moments", "portrait"],
+      "location": "OPH Ladies Rose Garden"
+    },
     "fanny": {
       "name": "Fanny",
       "description": "A beutiful collection of Fanny's moments",

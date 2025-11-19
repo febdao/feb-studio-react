@@ -69,12 +69,15 @@ img {
 }
 
 .album__item {
+  margin: 0 auto;
   margin-bottom: 1rem;
+  width: 1000px;
+  max-width: 100%;
 }
 
 .album__image {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 100%;
   height: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border: 5px solid #fff;

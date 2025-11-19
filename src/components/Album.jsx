@@ -9,9 +9,7 @@ function Album({ album }) {
       </div>
       {photos.map((photo) => (
         <div key={photo} className="album__item">
-          <div className="hover-3d">
-            <img className="album__image" src={photo} alt="hero" />
-          </div>
+          <img className="album__image" src={photo} alt="hero" />
         </div>
       ))}
     </div>

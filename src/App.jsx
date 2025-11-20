@@ -28,7 +28,7 @@ function App() {
     [baseAlbums],
   )
   const photoTypes = useMemo(() => getPhotoTypes(albums), [albums])
-  const [selectedAlbum, setSelectedAlbum] = useState(null)
+  const [selectedAlbumKey, setSelectedAlbumKey] = useState(null)
   const [selectedType, setSelectedType] = useState('all')
   const [toggler, setToggler] = useState(false)
   const heroPhotos = featured ? fetchImages('featured') : []
@@ -38,6 +38,12 @@ function App() {
       return Array.isArray(album.tags) && album.tags.includes(selectedType)
     }),
   )
+  const selectedAlbum =
+    selectedAlbumKey && albums[selectedAlbumKey] ? albums[selectedAlbumKey] : null
+  const closeAlbum = () => {
+    setSelectedAlbumKey(null)
+    setToggler(false)
+  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -46,24 +52,48 @@ function App() {
     if (typeParam && photoTypes.includes(typeParam)) {
       setSelectedType((current) => (current === typeParam ? current : typeParam))
     }
-  }, [photoTypes])
+    const albumParam = params.get('album')
+    if (albumParam && albums[albumParam]) {
+      setSelectedAlbumKey((current) =>
+        current === albumParam ? current : albumParam,
+      )
+      setToggler(true)
+    }
+  }, [photoTypes, albums])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
-    const currentParam = params.get('type')
+    const currentType = params.get('type')
+    const currentAlbum = params.get('album')
+    let shouldUpdate = false
     if (selectedType === 'all') {
-      if (!currentParam) return
-      params.delete('type')
+      if (currentType) {
+        params.delete('type')
+        shouldUpdate = true
+      }
     } else {
-      if (currentParam === selectedType) return
-      params.set('type', selectedType)
+      if (currentType !== selectedType) {
+        params.set('type', selectedType)
+        shouldUpdate = true
+      }
     }
+    if (toggler && selectedAlbumKey) {
+      if (currentAlbum !== selectedAlbumKey) {
+        params.set('album', selectedAlbumKey)
+        shouldUpdate = true
+      }
+    } else if (currentAlbum) {
+      params.delete('album')
+      shouldUpdate = true
+    }
+
+    if (!shouldUpdate) return
 
     const queryString = params.toString()
     const newUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`
     window.history.replaceState({}, '', newUrl)
-  }, [selectedType])
+  }, [selectedType, toggler, selectedAlbumKey])
 
   return (
     <div data-theme="corporate">
@@ -88,12 +118,12 @@ function App() {
               </div>
             </div>
             <div className="content-grid">
-              {Object.keys(filteredAlbums).map((album) => (
-                <div className="content-grid__item" key={album} onClick={() => {
-                  setSelectedAlbum(filteredAlbums[album])
-                  setToggler(!toggler)
+              {Object.keys(filteredAlbums).map((albumKey) => (
+                <div className="content-grid__item" key={albumKey} onClick={() => {
+                  setSelectedAlbumKey(albumKey)
+                  setToggler(true)
                 }}>
-                  <AlbumCover album = {filteredAlbums[album]} />
+                  <AlbumCover album = {filteredAlbums[albumKey]} />
                 </div>
               ))}
             </div>
@@ -127,11 +157,11 @@ function App() {
         </dialog>
       </div>
       {toggler && <div className='content-popup'>
-        <button className='content-popup__close' onClick={() => setToggler(!toggler)}>
+        <button className='content-popup__close' onClick={closeAlbum}>
           Back
         </button>
         {selectedAlbum && <Album album={selectedAlbum} />}
-        <button className='content-popup__back' onClick={() => setToggler(!toggler)}>
+        <button className='content-popup__back' onClick={closeAlbum}>
           Back
         </button>
       </div>}

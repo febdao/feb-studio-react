@@ -118,7 +118,7 @@ function App() {
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-6xl font-bold text-center mb-4 md:mb-10 block-title">Our <span>{formatPhotoTypeLabel(selectedType)}</span> Projects</h2>
             <div className="project-filter flex justify-center mb-5 md:mb-10">
-              <div className="filter">
+              <div className="flex gap-1">
                 {photoTypes.map((type) => (
                   <input
                     key={type}

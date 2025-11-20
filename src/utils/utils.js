@@ -26,10 +26,10 @@ function fetchImages(folderName) {
 }
 
 const PHOTO_TYPE_STYLES = {
-  all: 'btn btn-neutral filter-reset',
-  family: 'btn btn-warning',
-  event: 'btn btn-primary',
-  portrait: 'btn btn-error',
+  all: 'btn btn-outline btn-neutral filter-reset',
+  family: 'btn btn-outline btn-accent',
+  event: 'btn btn-outline btn-primary',
+  portrait: 'btn btn-outline btn-error',
 }
 
 const formatPhotoTypeLabel = (tag) =>

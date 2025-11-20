@@ -25,4 +25,28 @@ function fetchImages(folderName) {
   return images
 }
 
-export default fetchImages
+const PHOTO_TYPE_STYLES = {
+  all: 'btn btn-neutral filter-reset',
+  family: 'btn btn-warning',
+  event: 'btn btn-primary',
+  portrait: 'btn btn-error',
+}
+
+const formatPhotoTypeLabel = (tag) =>
+  tag
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+
+const getPhotoTypes = (albums) => {
+  const tagSet = new Set()
+
+  Object.values(albums).forEach(({ tags }) => {
+    if (!Array.isArray(tags)) return
+    tags.forEach((tag) => tagSet.add(tag))
+  })
+
+  return ['all', ...tagSet]
+}
+
+export { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES }

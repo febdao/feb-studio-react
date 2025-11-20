@@ -1,46 +1,99 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import Album from './components/Album'
 import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
 import data from './data.json'
 import CTA from './components/CTA'
-import fetchImages from './utils/fetchImages'
+import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
 import Booking from './components/Booking'
 
+
 function App() {
-  const { albums: staticAlbums, featured } = data
-  const albums = Object.fromEntries(
-    Object.entries(staticAlbums).map(([albumKey, album]) => {
-      const photosFromFolder = fetchImages(albumKey)
-      return [
-        albumKey,
-        {
-          ...album,
-          photos: photosFromFolder.length ? photosFromFolder : [],
-        },
-      ]
+  const { albums: baseAlbums = {}, featured } = data
+  const albums = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(baseAlbums).map(([albumKey, album]) => {
+          const photosFromFolder = fetchImages(albumKey)
+          return [
+            albumKey,
+            {
+              ...album,
+              photos: photosFromFolder.length ? photosFromFolder : [],
+            },
+          ]
+        }),
+      ),
+    [baseAlbums],
+  )
+  const photoTypes = useMemo(() => getPhotoTypes(albums), [albums])
+  const [selectedAlbum, setSelectedAlbum] = useState(null)
+  const [selectedType, setSelectedType] = useState('all')
+  const [toggler, setToggler] = useState(false)
+  const heroPhotos = featured ? fetchImages('featured') : []
+  const filteredAlbums = Object.fromEntries(
+    Object.entries(albums).filter(([, album]) => {
+      if (selectedType === 'all') return true
+      return Array.isArray(album.tags) && album.tags.includes(selectedType)
     }),
   )
 
-  const [selectedAlbum, setSelectedAlbum] = useState(null)
-  const [toggler, setToggler] = useState(false)
-  const heroPhotos = featured ? fetchImages('featured') : []
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const typeParam = params.get('type')
+    if (typeParam && photoTypes.includes(typeParam)) {
+      setSelectedType((current) => (current === typeParam ? current : typeParam))
+    }
+  }, [photoTypes])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const currentParam = params.get('type')
+    if (selectedType === 'all') {
+      if (!currentParam) return
+      params.delete('type')
+    } else {
+      if (currentParam === selectedType) return
+      params.set('type', selectedType)
+    }
+
+    const queryString = params.toString()
+    const newUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`
+    window.history.replaceState({}, '', newUrl)
+  }, [selectedType])
 
   return (
-    <div data-theme="autumn">
+    <div data-theme="corporate">
       <div className={`main-content ${toggler ? 'is-inactive' : ''}`}>
         <Hero photos={heroPhotos} />
         <div className="content bg-amber-50 content p-10 md:p-20">
           <div className="container mx-auto">
-            <h2 className="text-3xl md:text-6xl font-bold text-center mb-10 md:mb-20 block-title">Our <span>Projects</span></h2>
+            <h2 className="text-3xl md:text-6xl font-bold text-center mb-10 block-title">Our <span>{formatPhotoTypeLabel(selectedType)}</span> Projects</h2>
+            <div className="project-filter flex justify-center mb-10">
+              <div className="filter">
+                {photoTypes.map((type) => (
+                  <input
+                    key={type}
+                    className={PHOTO_TYPE_STYLES[type] ?? 'btn'}
+                    type="radio"
+                    name="metaframeworks"
+                    aria-label={formatPhotoTypeLabel(type)}
+                    checked={selectedType === type}
+                    onChange={() => setSelectedType(type)}
+                  />
+                ))}
+              </div>
+            </div>
             <div className="content-grid">
-              {Object.keys(albums).map((album) => (
+              {Object.keys(filteredAlbums).map((album) => (
                 <div className="content-grid__item" key={album} onClick={() => {
-                  setSelectedAlbum(albums[album])
+                  setSelectedAlbum(filteredAlbums[album])
                   setToggler(!toggler)
                 }}>
-                  <AlbumCover album = {albums[album]} />
+                  <AlbumCover album = {filteredAlbums[album]} />
                 </div>
               ))}
             </div>

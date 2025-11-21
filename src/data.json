@@ -73,6 +73,11 @@
       "description": "Baptism of Ziggy",
       "tags": ["event", "baptism", "birthday"]
     },
+    "miu-cun": {
+      "name": "Miu & Cun",
+      "description": "Birthday photos of Miu & Cun",
+      "tags": ["event", "birthday"]
+    },
     "mia": {
       "name": "Mia",
       "description": "Mia's wedding",

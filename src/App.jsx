@@ -117,7 +117,7 @@ function App() {
         <div className="content bg-amber-50 content px-3 py-10 md:px-5 md:py-20">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-6xl font-bold text-center mb-4 md:mb-10 block-title">Our <span>{formatPhotoTypeLabel(selectedType)}</span> Projects</h2>
-            <div className="project-filter flex justify-center mb-5 md:mb-10">
+            <div className="project-filter hidden md:flex justify-center mb-5 md:mb-10">
               <div className="flex gap-1">
                 {photoTypes.map((type) => (
                   <input
@@ -131,6 +131,22 @@ function App() {
                   />
                 ))}
               </div>
+            </div>
+            <div className="project-filter--mobile flex justify-center md:hidden mb-5 mx-auto">
+              <label className="select">
+                <span className="label">Filter by: </span>
+                <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+                  {photoTypes.map((type) => (
+                  <option
+                    key={type}
+                    value={type}
+                    aria-label={formatPhotoTypeLabel(type)}
+                  >
+                    {formatPhotoTypeLabel(type)}
+                  </option>
+                ))}
+                </select>
+              </label>
             </div>
             <div className="content-grid">
               {Object.keys(filteredAlbums).map((albumKey) => (

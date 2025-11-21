@@ -16,11 +16,14 @@ function App() {
       Object.fromEntries(
         Object.entries(baseAlbums).map(([albumKey, album]) => {
           const photosFromFolder = fetchImages(albumKey)
+          const photos = photosFromFolder.length ? photosFromFolder : []
+          const coverPhoto = photos.length > 0 ? photos[Math.floor(Math.random() * photos.length)] : '/images/cover.jpg'
           return [
             albumKey,
             {
               ...album,
-              photos: photosFromFolder.length ? photosFromFolder : [],
+              photos,
+              coverPhoto,
             },
           ]
         }),
@@ -47,6 +50,9 @@ function App() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
     const params = new URLSearchParams(window.location.search)
     const typeParam = params.get('type')
     if (typeParam && photoTypes.includes(typeParam)) {
@@ -119,17 +125,23 @@ function App() {
             <h2 className="text-3xl md:text-6xl font-bold text-center mb-4 md:mb-10 block-title">Our <span>{formatPhotoTypeLabel(selectedType)}</span> Projects</h2>
             <div className="project-filter hidden md:flex justify-center mb-5 md:mb-10">
               <div className="flex gap-1">
-                {photoTypes.map((type) => (
-                  <input
-                    key={type}
-                    className={PHOTO_TYPE_STYLES[type] ?? 'btn'}
-                    type="radio"
-                    name="metaframeworks"
-                    aria-label={formatPhotoTypeLabel(type)}
-                    checked={selectedType === type}
-                    onChange={() => setSelectedType(type)}
-                  />
-                ))}
+                {photoTypes.map((type) => {
+                  const baseStyle = PHOTO_TYPE_STYLES[type] ?? 'btn'
+                  const buttonStyle = selectedType === type 
+                    ? baseStyle.replace('btn-outline', '') 
+                    : baseStyle
+
+                  return (
+                    <button
+                      key={type}
+                      type="button"
+                      className={buttonStyle}
+                      onClick={() => setSelectedType(type)}
+                    >
+                      {formatPhotoTypeLabel(type)}
+                    </button>
+                  )
+                })}
               </div>
             </div>
             <div className="project-filter--mobile flex justify-center md:hidden mb-5 mx-auto">

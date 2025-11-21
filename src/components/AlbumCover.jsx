@@ -1,9 +1,5 @@
 function AlbumCover({ album }) {
-  const { photos, name, description, location, tags } = album
-  const coverPhoto =
-    photos.length > 0
-      ? photos[Math.floor(Math.random() * photos.length)]
-      : ''
+  const { coverPhoto, name, description, location, tags } = album
   return (
     <div className="hover-3d">
       <div className="album-cover">

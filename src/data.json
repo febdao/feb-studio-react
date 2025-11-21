@@ -33,7 +33,7 @@
     "bo": {
       "name": "Clara",
       "description": "Clara's birthday",
-      "tags": ["event", "portrait"],
+      "tags": ["event", "portrait", "birthday"],
       "location": "Feb Studio"
     },
     "huongly": {
@@ -45,7 +45,7 @@
     "william": {
       "name": "William",
       "description": "William's birthday",
-      "tags": ["event", "portrait"]
+      "tags": ["event", "portrait", "birthday"]
     },
     "jenny-nguyen": {
       "name": "Jenny Thục Nguyễn",
@@ -55,13 +55,28 @@
     "minky": {
       "name": "Minky",
       "description": "Minky's birthday",
-      "tags": ["event", "portrait"]
+      "tags": ["event", "portrait", "birthday"]
     },
     "hanh-harry": {
       "name": "Hanh & Harry",
       "description": "Hanh & Harry's moments",
       "tags": ["family", "portrait"],
       "location": "Mialli place, O'malley"
+    },
+    "minh-ngoc": {
+      "name": "Minh & Ngọc",
+      "description": "Minh & Ngọc's moments",
+      "tags": ["portrait", "wedding"]
+    },
+    "felicity": {
+      "name": "Felicity",
+      "description": "Baptism of Ziggy",
+      "tags": ["event", "baptism", "birthday"]
+    },
+    "mia": {
+      "name": "Mia",
+      "description": "Mia's wedding",
+      "tags": ["event", "wedding"]
     },
     "khanh2025": {
       "name": "Khanh Kami",
@@ -78,7 +93,7 @@
     "trinhoa": {
       "name": "Trịnh Hoa",
       "description": "Trịnh Hoa prewedding moments",
-      "tags": ["portrait"],
+      "tags": ["portrait", "wedding"],
       "location": "Feb Studio"
     },
     "dscd2025": {

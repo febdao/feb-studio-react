@@ -1,3 +1,5 @@
+import CopyButton from "./CopyButton"
+
 function Album({ album }) {
   const { photos, name, description, location, tags } = album
   return (
@@ -7,6 +9,9 @@ function Album({ album }) {
         { description && <p className="album__description text-2xl">{description}</p>}
         { location && <p className="album__location mt-4">⚑ {location}</p>}
         { tags && <p className="album-cover__tags capitalize mt-4 badge badge-neutral badge-outline">{tags.join(', ')}</p>}
+        <div className="mt-4">
+          <CopyButton />
+        </div>
       </div>
       {photos.map((photo) => (
         <div key={photo} className="album__item">

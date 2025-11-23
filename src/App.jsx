@@ -5,7 +5,7 @@ import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
 import data from './data.json'
 import CTA from './components/CTA'
-import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
+import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES, updateMetaTags } from './utils/utils'
 import Booking from './components/Booking'
 
 
@@ -100,6 +100,10 @@ function App() {
     const newUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`
     window.history.replaceState({}, '', newUrl)
   }, [selectedType, toggler, selectedAlbumKey])
+
+  useEffect(() => {
+    updateMetaTags(selectedAlbum, selectedAlbumKey)
+  }, [selectedAlbum, selectedAlbumKey])
 
   return (
     <div data-theme="corporate">

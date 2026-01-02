@@ -1,5 +1,11 @@
 {
   "albums": {
+    "yvonne": {
+      "name": "Yvonne Mataale",
+      "description": "The moments of a really lovely family",
+      "tags": ["portrait", "family"],
+      "location": "Himalayan Cedar Lookout"
+    },
     "stacey": {
       "name": "Stacey He",
       "description": "A traditional collection of Stacey He's moments",

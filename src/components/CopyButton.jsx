@@ -1,11 +1,7 @@
 function CopyButton() {
   const copyUrl = () => {
-    // get the url with ?album only
     const url = window.location.href
-    const params = new URLSearchParams(window.location.search)
-    const album = params.get('album')
-    const newUrl = `${window.location.origin}${window.location.pathname}?album=${album}`
-    navigator.clipboard.writeText(newUrl)
+    navigator.clipboard.writeText(url)
     alert('URL copied to clipboard!')
   }
 

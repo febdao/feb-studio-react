@@ -5,13 +5,13 @@ function Header() {
   return (
     <div className="dock">
       <div>
-        <Link to="/">
-          <img className="dock__logo" src="/images/logo.png" alt="logo" />
-        </Link>
-      </div>
-      
-      <div>
         <CTA />
+      </div>
+
+      <div>
+        <Link to="/">
+          <img className="dock__logo py-2" src="/images/logo.png" alt="logo" />
+        </Link>
       </div>
       
       <div className="doc__phone">

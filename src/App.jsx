@@ -1,37 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router'
 import './App.css'
 import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
-import data from './data.json'
 import Header from './components/Header'
-import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
+import { getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
 
 
 function App() {
-  const { albums: baseAlbums = {}, featured } = data
-  const albums = useMemo(
-    () =>
-      Object.fromEntries(
-        Object.entries(baseAlbums).map(([albumKey, album]) => {
-          const photosFromFolder = fetchImages(albumKey)
-          const photos = photosFromFolder.length ? photosFromFolder : []
-          const coverPhoto = photos.length > 0 ? photos[Math.floor(Math.random() * photos.length)] : '/images/cover.jpg'
-          return [
-            albumKey,
-            {
-              ...album,
-              photos,
-              coverPhoto,
-            },
-          ]
-        }),
-      ),
-    [baseAlbums],
-  )
+  const albums = useSelector((state) => state.albums.albums)
+  const heroPhotos = useSelector((state) => state.albums.featuredPhotos)
   const photoTypes = useMemo(() => getPhotoTypes(albums), [albums])
   const [selectedType, setSelectedType] = useState('all')
-  const heroPhotos = featured ? fetchImages('featured') : []
   const filteredAlbums = Object.fromEntries(
     Object.entries(albums).filter(([, album]) => {
       if (selectedType === 'all') return true

@@ -205,3 +205,7 @@ img {
   top: 0;
   bottom: auto;
 }
+
+.booking-form iframe{
+  width: 100%;
+}

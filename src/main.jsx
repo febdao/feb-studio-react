@@ -2,9 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router'
+import { Provider } from 'react-redux'
+import store from './store'
 import App from './App.jsx'
 import Booking from './components/Booking.jsx'
-import AlbumPage from './components/AlbumPage.jsx'
+import Album from './components/Album.jsx'
 
 const router = createBrowserRouter([
   {
@@ -17,12 +19,14 @@ const router = createBrowserRouter([
   },
   {
     path: '/album/:album',
-    element: <AlbumPage />,
+    element: <Album />,
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )

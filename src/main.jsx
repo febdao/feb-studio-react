@@ -7,20 +7,27 @@ import store from './store'
 import App from './App.jsx'
 import Booking from './components/Booking.jsx'
 import Album from './components/Album.jsx'
+import AppLayout from './components/AppLayout.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        element: <App />,
+      },
+      {
+        path: 'booking',
+        element: <Booking />,
+      },
+      {
+        path: 'album/:album',
+        element: <Album />,
+      },
+    ],
   },
-  {
-    path: '/booking',
-    element: <Booking />,
-  },
-  {
-    path: '/album/:album',
-    element: <Album />,
-  }
 ])
 
 createRoot(document.getElementById('root')).render(

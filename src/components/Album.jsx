@@ -17,9 +17,11 @@ function Album() {
             <h2 className="album__title block-title text-5xl mb-5"><span>{name}</span></h2>
             { description && <p className="album__description text-2xl">{description}</p>}
             { location && <p className="album__location mt-4">⚑ {location}</p>}
-            { tags && <p className="album-cover__tags capitalize mt-4 badge badge-neutral badge-outline">{tags.join(', ')}</p>}
             <div className="mt-4">
               <CopyButton />
+              <Link to="/" className="btn btn-sm btn-info ml-1">
+                Back
+              </Link>      
             </div>
           </div>
         </div>

@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router'
 import './App.css'
-import Album from './components/Album'
 import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
 import data from './data.json'
 import Header from './components/Header'
-import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES, updateMetaTags } from './utils/utils'
-import Booking from './components/Booking'
+import { fetchImages, getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
 
 
 function App() {
@@ -31,10 +30,7 @@ function App() {
     [baseAlbums],
   )
   const photoTypes = useMemo(() => getPhotoTypes(albums), [albums])
-  const [selectedAlbumKey, setSelectedAlbumKey] = useState(null)
   const [selectedType, setSelectedType] = useState('all')
-  const [toggler, setToggler] = useState(false)
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
   const heroPhotos = featured ? fetchImages('featured') : []
   const filteredAlbums = Object.fromEntries(
     Object.entries(albums).filter(([, album]) => {
@@ -42,12 +38,6 @@ function App() {
       return Array.isArray(album.tags) && album.tags.includes(selectedType)
     }),
   )
-  const selectedAlbum =
-    selectedAlbumKey && albums[selectedAlbumKey] ? albums[selectedAlbumKey] : null
-  const closeAlbum = () => {
-    setSelectedAlbumKey(null)
-    setToggler(false)
-  }
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -59,24 +49,12 @@ function App() {
     if (typeParam && photoTypes.includes(typeParam)) {
       setSelectedType((current) => (current === typeParam ? current : typeParam))
     }
-    const albumParam = params.get('album')
-    if (albumParam && albums[albumParam]) {
-      setSelectedAlbumKey((current) =>
-        current === albumParam ? current : albumParam,
-      )
-      setToggler(true)
-    }
-    if (params.get('booking') === 'true') {
-      setIsBookingOpen(true)
-    }
   }, [photoTypes, albums])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
     const currentType = params.get('type')
-    const currentAlbum = params.get('album')
-    const currentBooking = params.get('booking')
     let shouldUpdate = false
     
     if (selectedType === 'all') {
@@ -90,52 +68,17 @@ function App() {
         shouldUpdate = true
       }
     }
-    
-    if (toggler && selectedAlbumKey) {
-      if (currentAlbum !== selectedAlbumKey) {
-        params.set('album', selectedAlbumKey)
-        shouldUpdate = true
-      }
-    } else if (currentAlbum) {
-      params.delete('album')
-      shouldUpdate = true
-    }
-
-    if (isBookingOpen) {
-      if (currentBooking !== 'true') {
-        params.set('booking', 'true')
-        shouldUpdate = true
-      }
-    } else {
-      if (currentBooking) {
-        params.delete('booking')
-        shouldUpdate = true
-      }
-    }
 
     if (!shouldUpdate) return
 
     const queryString = params.toString()
     const newUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`
     window.history.replaceState({}, '', newUrl)
-  }, [selectedType, toggler, selectedAlbumKey, isBookingOpen])
-
-  useEffect(() => {
-    const modal = document.getElementById('booking-form')
-    if (isBookingOpen) {
-      modal.showModal()
-    } else {
-      modal.close()
-    }
-  }, [isBookingOpen])
-
-  useEffect(() => {
-    updateMetaTags(selectedAlbum, selectedAlbumKey)
-  }, [selectedAlbum, selectedAlbumKey])
+  }, [selectedType])
 
   return (
     <div data-theme="corporate">
-      <div className={`main-content ${toggler ? 'is-inactive' : ''}`}>
+      <div className="main-content">
         <Hero photos={heroPhotos} />
         <Header />
         <div className="content bg-amber-50 content px-3 py-10 md:px-5 md:py-20">
@@ -180,36 +123,16 @@ function App() {
             </div>
             <div className="content-grid">
               {Object.keys(filteredAlbums).map((albumKey) => (
-                <div className="content-grid__item" key={albumKey} onClick={() => {
-                  setSelectedAlbumKey(albumKey)
-                  setToggler(true)
-                }}>
-                  <AlbumCover album = {filteredAlbums[albumKey]} />
+                <div className="content-grid__item" key={albumKey} >
+                  <Link to={`/album/${albumKey}`}>
+                    <AlbumCover album={filteredAlbums[albumKey]} />
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <dialog id="booking-form" className="modal" onClose={() => setIsBookingOpen(false)}>
-          <div className="modal-box w-11/12 max-w-5xl">
-            <div className="modal-action mb-4">
-              <form method="dialog">
-                <button className="btn">Close</button>
-              </form>
-            </div>
-            <Booking />
-          </div>
-        </dialog>
       </div>
-      {toggler && <div className='content-popup'>
-        <button className='content-popup__close' onClick={closeAlbum}>
-          Back
-        </button>
-        {selectedAlbum && <Album album={selectedAlbum} />}
-        <button className='content-popup__back' onClick={closeAlbum}>
-          Back
-        </button>
-      </div>}
     </div>
   )
 }

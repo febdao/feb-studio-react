@@ -6,7 +6,7 @@ function Header() {
     <div className="dock">
       <div>
         <Link to="/">
-          <img className="dock__logo" src="images/logo.png" alt="logo" />
+          <img className="dock__logo" src="/images/logo.png" alt="logo" />
         </Link>
       </div>
       

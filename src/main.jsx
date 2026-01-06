@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router'
 import App from './App.jsx'
 import Booking from './components/Booking.jsx'
+import AlbumPage from './components/AlbumPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/booking',
     element: <Booking />,
+  },
+  {
+    path: '/album/:album',
+    element: <AlbumPage />,
   }
 ])
 

@@ -1,11 +1,44 @@
-import CopyButton from "./CopyButton"
+import { useEffect } from "react"
 import { Link, useParams } from "react-router";
 import { useSelector } from "react-redux";
+import CopyButton from "./CopyButton"
 import Header from "./Header"
+import { updateMetaTags } from "../utils/utils";
 
 function Album() {
   const { album } = useParams();
   const albumData = useSelector((state) => state.albums.albums[album]);
+  
+  useEffect(() => {
+    if (!albumData) return
+    updateMetaTags(
+      {
+        ...albumData,
+        coverPhoto: albumData.coverPhoto,
+      },
+      album
+    )
+    return () => {
+      updateMetaTags(null)
+    }
+  }, [albumData, album])
+
+  if (!albumData) {
+    return (
+      <>
+        <Header />
+        <div className="album">
+          <div className="container mx-auto py-20 text-center">
+            <h2 className="text-3xl font-bold">Album not found</h2>
+            <Link to="/" className="btn mt-5">
+              Go back home
+            </Link>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   const { photos, name, description, location, coverPhoto } = albumData
 
   return (

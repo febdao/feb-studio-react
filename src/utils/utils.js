@@ -84,7 +84,7 @@ const updateMetaTags = (selectedAlbum, selectedAlbumKey) => {
           selectedAlbum.coverPhoto || "/images/cover.jpg"
         }`;
 
-    const albumUrl = `${window.location.origin}${window.location.pathname}?album=${selectedAlbumKey}`;
+    const albumUrl = `${window.location.origin}${window.location.pathname}/album/${selectedAlbumKey}`;
     const albumDesc = selectedAlbum.description || defaultDesc;
 
     // Update Meta Tags

@@ -6,7 +6,7 @@ import Header from "./Header"
 function Album() {
   const { album } = useParams();
   const albumData = useSelector((state) => state.albums.albums[album]);
-  const { photos, name, description, location, tags, coverPhoto } = albumData
+  const { photos, name, description, location, coverPhoto } = albumData
 
   return (
     <>

@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import './App.css'
 import AlbumCover from './components/AlbumCover'
 import Hero from './components/Hero'
+import Pricing from './components/Pricing'
 import Header from './components/Header'
 import { getPhotoTypes, formatPhotoTypeLabel, PHOTO_TYPE_STYLES } from './utils/utils'
 
@@ -61,6 +62,7 @@ function App() {
     <div data-theme="corporate">
       <div className="main-content">
         <Hero photos={heroPhotos} />
+        <Pricing />
         <Header />
         <div className="content bg-amber-50 content px-3 py-10 md:px-5 md:py-20">
           <div className="container mx-auto">

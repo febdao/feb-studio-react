@@ -54,7 +54,7 @@ img {
 }
 
 .hero-banner__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 
   @media (min-width: 1024px) {

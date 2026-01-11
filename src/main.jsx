@@ -5,7 +5,8 @@ import { RouterProvider } from 'react-router'
 import { Provider } from 'react-redux'
 import store from './store'
 import App from './App.jsx'
-import Booking from './components/Booking.jsx'
+import BookingPage from './pages/BookingPage.jsx'
+import PricingPage from './pages/PricingPage.jsx'
 import Album from './components/Album.jsx'
 import AppLayout from './components/AppLayout.jsx'
 
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'booking',
-        element: <Booking />,
+        element: <BookingPage />,
+      },
+      {
+        path: 'pricing',
+        element: <PricingPage />,
       },
       {
         path: 'album/:album',

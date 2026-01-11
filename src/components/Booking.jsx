@@ -1,9 +1,6 @@
-import Header from "./Header"
-
 function Booking() {
   return (
     <div>
-      <Header />
       <div className="booking-form">
         <div className="container mx-auto">
           <iframe

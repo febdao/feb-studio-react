@@ -226,6 +226,7 @@ img {
   border: none;
 }
 
+.header,
 .dock {
   position: sticky;
   top: 0;

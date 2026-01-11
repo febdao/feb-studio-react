@@ -56,8 +56,8 @@ export default function Pricing() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl dark:text-white">
-          Photography Packages in Canberra
+        <h2 className="mt-2 block-title text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl dark:text-white">
+          Photography Packages in <span>Canberra</span>
         </h2>
       </div>
       <p className="mx-auto mt-6 max-w-4xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8 dark:text-gray-400">

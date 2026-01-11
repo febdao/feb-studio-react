@@ -18,7 +18,7 @@ function Hero({ photos }) {
   }, [photos])
   
   return (
-    <div className="hero-banner">
+    <div className="hero-banner pb-14 lg:pb-24">
       <div className="hero-banner__content">
         <img className="hero-banner__logo" src="images/logo.png" alt="logo" />
         <h1 className="hero-banner__title block-title">

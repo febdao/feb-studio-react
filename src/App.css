@@ -22,14 +22,9 @@ img {
 }
 
 .hero-banner {
-  padding: 1rem 0;
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-
-  @media (min-width: 1024px) {
-    padding: 4rem 0;
-  }
 }
 
 .hero-banner__content {

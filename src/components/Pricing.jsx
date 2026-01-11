@@ -45,7 +45,7 @@ function classNames(...classes) {
 
 export default function Pricing() {
   return (
-    <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-gray-900">
+    <div className="relative isolate bg-white px-6 py-12 sm:py-32 lg:px-8 dark:bg-gray-900">
       <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
         <div
           style={{
@@ -56,7 +56,7 @@ export default function Pricing() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="mt-2 block-title text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl dark:text-white">
+        <h2 className="mt-2 block-title text-4xl font-semibold tracking-tight text-balance text-gray-900 lg:text-6xl dark:text-white">
           Photography Packages in <span>Canberra</span>
         </h2>
       </div>

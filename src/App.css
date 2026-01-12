@@ -64,7 +64,6 @@ img {
 }
 
 .album {
-  padding: 2rem;
   text-align: center;
 }
 
@@ -73,6 +72,7 @@ img {
   margin-bottom: 1rem;
   width: 900px;
   max-width: 100%;
+  padding: 0 0.8rem;
 }
 
 .album__image {

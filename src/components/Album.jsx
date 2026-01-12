@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { Link, useParams } from "react-router";
 import { useSelector } from "react-redux";
 import CopyButton from "./CopyButton"
-import Header from "./Header"
 import { updateMetaTags } from "../utils/utils";
 
 function Album() {
@@ -26,7 +25,6 @@ function Album() {
   if (!albumData) {
     return (
       <>
-        <Header />
         <div className="album">
           <div className="container mx-auto py-20 text-center">
             <h2 className="text-3xl font-bold">Album not found</h2>
@@ -43,7 +41,6 @@ function Album() {
 
   return (
     <>
-      <Header />
       <div className="album">
         <div className="album__content mb-5 p-10" style={{backgroundImage: `url(${coverPhoto})`}}>
           <div className="container mx-auto">

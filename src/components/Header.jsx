@@ -13,12 +13,12 @@ function Header() {
                 <img className="dock__logo py-2" src="/images/logo.png" alt="logo" />
               </Link>
             </div>
-            <div className="flex flext-row items-center">
+            <div className="flex items-center">
               <ul className="menu menu-horizontal px-1">
-                <li><Link to="/"><HomeIcon className="h-5 w-5" /> Home</Link></li>
+                <li><Link to="/"><HomeIcon className="h-5 w-5" /><span className='hidden xs:inline-block'> Home</span></Link></li>
                 <li><Link to="/pricing"><CurrencyDollarIcon className="h-5 w-5" /> Pricing</Link></li>
               </ul>
-              <Link to="/booking" className="btn btn-success"> <CalendarDaysIcon className="h-5 w-5" /> Book now</Link>
+              <Link to="/booking" className="btn btn-success"><CalendarDaysIcon className="h-5 w-5" /> Book now</Link>
             </div>
           </div>
         </div>

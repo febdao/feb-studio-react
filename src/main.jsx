@@ -7,6 +7,7 @@ import store from './store'
 import App from './App.jsx'
 import BookingPage from './pages/BookingPage.jsx'
 import PricingPage from './pages/PricingPage.jsx'
+import PolicyPage from './pages/PolicyPage.jsx'
 import Album from './components/Album.jsx'
 import AppLayout from './components/AppLayout.jsx'
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'pricing',
         element: <PricingPage />,
+      },
+      {
+        path: 'policy',
+        element: <PolicyPage />,
       },
       {
         path: 'album/:album',

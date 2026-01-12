@@ -197,11 +197,6 @@ img {
   columns: 400px;
 }
 
-.dock__logo {
-  max-width: 65px;
-  height: auto;
-}
-
 .doc__phone a {
   width: 45px;
   height: auto;

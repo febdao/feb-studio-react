@@ -8,6 +8,7 @@ import App from './App.jsx'
 import BookingPage from './pages/BookingPage.jsx'
 import PricingPage from './pages/PricingPage.jsx'
 import PolicyPage from './pages/PolicyPage.jsx'
+import ContractRenderPage from './pages/ContractRenderPage.jsx'
 import Album from './components/Album.jsx'
 import AppLayout from './components/AppLayout.jsx'
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: 'policy',
         element: <PolicyPage />,
+      },
+      {
+        path: 'contract',
+        element: <ContractRenderPage />,
       },
       {
         path: 'album/:album',

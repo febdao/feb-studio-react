@@ -33,10 +33,10 @@ const router = createBrowserRouter([
         path: 'policy',
         element: <PolicyPage />,
       },
-      {
-        path: 'contract',
-        element: <ContractRenderPage />,
-      },
+      // {
+      //   path: 'contract',
+      //   element: <ContractRenderPage />,
+      // },
       {
         path: 'album/:album',
         element: <Album />,

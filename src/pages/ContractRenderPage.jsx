@@ -4,7 +4,7 @@ const studioDetails = {
   name: "Feb Studio",
   abn: "79242354647",
   address: "44 Letters st, Evatt, ACT - 2617",
-  phone: "0468939034",
+  phone: "0421 565 212",
   website: "https://feb.studio",
 }
 
@@ -20,8 +20,8 @@ const formatDateDMY = (value) => {
 export default function ContractRenderPage() {
   const [formData, setFormData] = useState(() => ({
     agreementDate: getToday(),
-    photographerEmail: "dinhhien102@gmail.com",
-    photographerName: "Feb Dao",
+    photographerEmail: "nguyenthihang1202@gmail.com",
+    photographerName: "Feb",
     clientName: "",
     clientAddress: "",
     clientPhone: "",

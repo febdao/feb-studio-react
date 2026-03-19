@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { CalendarDaysIcon, HomeIcon, CurrencyDollarIcon } from '@heroicons/react/20/solid'
+import { CalendarDaysIcon, HomeIcon } from '@heroicons/react/20/solid'
 
 function Header() {
   return (
@@ -17,7 +17,7 @@ function Header() {
                 <li><Link to="/"><HomeIcon className="h-5 w-5" /><span className='hidden sm:inline-block'> Home</span></Link></li>
                 <li><Link to="/pricing">Pricing</Link></li>
                 <li><Link to="/policy">Policy</Link></li>
-                <li><Link to="/contract">Contract</Link></li>
+                {/* <li><Link to="/contract">Contract</Link></li> */}
               </ul>
               <Link to="/booking" className="btn btn-success"><CalendarDaysIcon className="h-5 w-5 hidden sm:inline-block" /> Book now</Link>
             </div>

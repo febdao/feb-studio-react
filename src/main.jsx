@@ -25,10 +25,10 @@ const router = createBrowserRouter([
         path: 'booking',
         element: <BookingPage />,
       },
-      {
-        path: 'pricing',
-        element: <PricingPage />,
-      },
+      // {
+      //   path: 'pricing',
+      //   element: <PricingPage />,
+      // },
       {
         path: 'policy',
         element: <PolicyPage />,

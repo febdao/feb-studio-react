@@ -15,7 +15,7 @@ function Header() {
             <div className="flex items-center">
               <ul className="menu menu-horizontal px-1">
                 <li><Link to="/"><HomeIcon className="h-5 w-5" /><span className='hidden sm:inline-block'> Home</span></Link></li>
-                <li><Link to="/pricing">Pricing</Link></li>
+                {/* <li><Link to="/pricing">Pricing</Link></li> */}
                 <li><Link to="/policy">Policy</Link></li>
                 {/* <li><Link to="/contract">Contract</Link></li> */}
               </ul>
